@@ -1,34 +1,20 @@
 import React from 'react';
-import { Form, Upload, Icon, Modal, Button, Input, message } from 'antd';
+import { Form, Upload, Icon, Button, Input, message } from 'antd';
 // import { observable, computed, useStrict, action, autorun } from 'mobx';
 import { observer, inject } from 'mobx-react';
-import styles from './common.css';
-import { addFile } from '../actions/index';
+import styles from './UploadFile.less';
 const FormItem = Form.Item;
 
-@inject('upload','uiState') @observer
+@observer
 class UploadFile extends React.Component {
-  constructor() {
-    super(...arguments);
-    this.state = {
-      previewVisible: false,
-      previewImage: '',
-      fileList: [{
-        uid: -1,
-        name: 'xxx.png',
-        status: 'done',
-        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-      }],
-    };
-  }
-
-  componentDidMount(){
-
-  }
-
-  handleCancel = () => this.setState({ previewVisible: false })
-
-  handleChange = ({ fileList }) => this.setState({ fileList })
+  state = {
+    fileList: [{
+      uid: -1,
+      name: 'xxx.png',
+      status: 'done',
+      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    }],
+  };
 
   makeProps = () => {
     let thisProps = {
@@ -61,12 +47,12 @@ class UploadFile extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    addFile({a:1,b:2});
+    this.props.addFile({a:1,b:2});
   }
 
   render() {
-    console.log('render', this.props.upload);
-    const { previewVisible, previewImage, fileList } = this.state;
+    console.log('render uploadFile');
+    const { fileList } = this.state;
     const { form:{getFieldDecorator,validateFields,getFieldsValue}} = this.props;
 
     let uploadProps = this.makeProps();
@@ -79,8 +65,7 @@ class UploadFile extends React.Component {
     );
 
     return (
-      <div className='clearfix' style={{padding: 50,width: 500}} >
-        <div>width: {this.props.uiState.widthType}</div>
+      <div className='clearfix'>
         name: {this.props.upload.name}
         <Form layout='horizontal' className='clearFix' onSubmit={this.handleSubmit} >
           <FormItem className={styles.item} label='名称' >
@@ -107,9 +92,6 @@ class UploadFile extends React.Component {
           </FormItem>
           <Button type='primary' size='large' htmlType='submit' style={{margin:0, width:'100%'}}>确定</Button>
         </Form>
-        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
-          <img alt='example' style={{ width: '100%' }} src={previewImage} />
-        </Modal>
       </div>
     );
   }

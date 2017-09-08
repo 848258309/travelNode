@@ -1,32 +1,55 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
+import AdminLayout from '../components/AdminLayout/MainLayout';
 import Upload from './Upload';
+import Login from './Login';
 import Test from './test';
 
-@inject('uiState') @observer
 class App extends React.Component {
   // constructor(props, context) {
   //   super(props, context);
   //   // context.router;
   // }
 
+
   render() {
-    console.log('app render');
-    return (
-      <div id="app" className="clearFix" >
+
+    const adminRouter = (
+      <AdminLayout>
         <Switch>
-          <Route exact path='/upload' component={Upload} />
-          <Route exact path='/test' component={Test} />
-          <Redirect to='/upload' />
+          <Route exact path='/admin/upload' component={Upload} />
         </Switch>
-        {/* <div>width: {this.props.uiState.widthType}</div> */}
+      </AdminLayout>
+    );
+
+    const loginRouter = (
+      <Switch>
+        <Route exact path='/admin/login' component={Login} />
+      </Switch>
+    );
+
+    const userRouter = (
+      <Switch>
+        <Route exact path='/test' component={Test} />
+        <Redirect to='/test' />
+      </Switch>
+    );
+
+    const pathName = location.pathname;
+    let routerType = userRouter;
+    if (pathName=='/admin/login') {
+      routerType = loginRouter;
+    } else if (pathName.includes('/admin/')) {
+      routerType = adminRouter;
+    }
+
+    return (
+      <div id='app' className='clearFix' >
+        {routerType}
       </div>
     )
   };
 }
 
-// App.contextTypes = {
-//    router: React.PropTypes.object.isRequired
-// }
 export default App;

@@ -1,8 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Menu, Icon } from 'antd';
-import { Link } from 'dva/router';
+import { Link } from 'react-router-dom';
 import styles from './HeaderRight.less';
-import { name } from '../../utils/utils';
 
 function getMenuKeyFromUrl(pathname) {
   let key = '';
@@ -10,7 +9,7 @@ function getMenuKeyFromUrl(pathname) {
     key = pathname.match(/\/([^\/]*)/i)[1];
     /* eslint no-empty:0 */
   } catch (e) {}
-  //console.log(pathname);
+  console.log(pathname);
   key = '/'+name+'/'+pathname;
   return key;
 }
@@ -40,7 +39,7 @@ function HeaderRight({ location, menu }) {
         {
           menu.map(item => {
             return <Menu.Item key={item.path}  className={styles[item.index]} >
-              <Link to={`/${name}/${item.path}`}><Icon type={item.icon} className={styles.icon} />{item.name}</Link>
+              <Link to={item.path}><Icon type={item.icon} className={styles.icon} />{item.name}</Link>
             </Menu.Item>;
           })
         }
@@ -60,9 +59,5 @@ function HeaderRight({ location, menu }) {
     </div>
   );
 }
-
-HeaderRight.propTypes = {
-  location: PropTypes.object,
-};
 
 export default HeaderRight;
