@@ -1,0 +1,110 @@
+@import "../../utils/default";
+
+.normal{background: @bg-color-left;}
+//.normal{background: #000;}
+.admin{
+  display: none;
+  padding:5px 15px;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.adminBtn{width: 40px;height:40px;margin: 10px 0 0 10px;background: #333;border-radius: 100px;float: left;}
+.admin1{
+  position: absolute;
+  top: 6px;
+  right: 50px;
+  transition: all 0.3s ease;
+}
+.admin1:hover{cursor: pointer;}
+.adminBtn1{width: 35px;height:35px;background: #333;border-radius: 100px;float: left;}
+.logout{float: right;margin-top: 20px;}
+.HeaderLeft,.HeaderLeft1{
+  width: 224px;
+  background: @bg-color-left;
+  position: fixed;
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+// .HeaderLeft1{
+//   background: @bg-color-left-ad !important;
+//   ul{
+//     background: @bg-color-left-ad !important;
+//   }
+// }
+.HeaderLeftLogoB{
+  height: 100px;
+  background: #333;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  border-radius: 6px;transition: all 0.3s ease;
+}
+.HeaderLeftShow{-webkit-transform: translateX(0) !important;transform: translateX(0) !important;opacity: 1 !important;}
+.HeaderLeftCov{position: fixed;width:100%;height:100%;z-index:998;top: 0;display:none;}
+.HeaderBar{display: none;}
+.HeaderBar:hover{cursor: pointer;}
+.HeaderRight{
+  margin-left: 224px;
+  //transition: all 0.3s ease;
+  background: #ececec;
+}
+.content{padding: 50px;}
+.main{background-color: #fff;min-height:830px;border-radius: 10px;}
+
+@media only screen and (min-width: @min-width) and(max-width: @mid-width) {
+  .admin1{right: 30px;}
+  .HeaderLeftLogoB{display: none;}
+  .HeaderLeftLogoS{
+    width: 30px;
+    margin: 16px;
+    height: 30px;
+    background: #333;
+    border-radius: 6px;transition: all 0.3s ease;
+  }
+  .HeaderLeft,.HeaderLeft1{width: 64px;}
+  .HeaderRight{margin-left: 64px;}
+  .content{padding: 30px;}
+  .main{min-height:870px;}
+}
+
+@media only screen and (max-width: @min-width){
+  .covShow{display: block;}
+  .admin{display: block;}
+  .admin1{display: none;}
+  .HeaderLeftLogoB{display: none;}
+  .HeaderLeftLogoS{display: none;}
+  .HeaderBar{display: block;padding: 5px 10px;font-size: 20px;position: absolute;top: 3px;right: 8px;}
+  .HeaderLeft,.HeaderLeft1{
+    width: 175px;
+  	display:block;
+  	margin-right: 0;
+  	position: fixed;
+  	//box-shadow: 10px 0 12px rgba(0,0,0,.1);
+  	height: 100%;
+  	z-index:999;
+  	top: 0;
+  	opacity: 1;
+  	overflow-x: hidden;
+  	overflow-y: auto;
+  	-webkit-transform: translateX(-100%);
+  	transform: translateX(-100%);
+  	-webkit-transition: opacity .3s,-webkit-transform .3s;
+  	transition: opacity .3s,-webkit-transform .3s;
+  	transition: transform .3s,opacity .3s;
+  	transition: transform .3s,opacity .3s,-webkit-transform .3s;
+  	/* margin-top: -48px;background-color: rgba(100,100,100,0.2); */
+  }
+  .HeaderRight{
+    margin-left: 0;
+    background-color: #fff;
+  }
+  .content{padding: 15px;}
+  .main{min-height: 100%;}
+}

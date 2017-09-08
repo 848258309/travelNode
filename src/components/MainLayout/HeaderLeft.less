@@ -1,0 +1,16 @@
+@import "../../utils/default";
+
+@media only screen and (min-width: @max-width){
+  .menu{margin: 10px 0;padding-left: 35px !important;}
+  .leftIcon,.leftSpan{font-size: 14px;transition: all 0.3s ease;}
+}
+@media only screen and (max-width: @max-width){
+  .menu{padding-left: 22px !important;}
+  .leftIcon{font-size: 18px;transition: all 0.3s ease;}
+  .leftSpan{display: none;transition: all 0.3s ease;}
+}
+@media only screen and (max-width: @min-width){
+  .leftIcon{font-size: 14px;transition: all 0.3s ease;}
+  .leftSpan{display: inline-block;transition: all 0.3s ease;}
+
+}

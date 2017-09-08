@@ -1,0 +1,54 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "set PORT=8010 && set BROWSER=none && roadhog server --no-open",
+    "build": "roadhog build",
+    "copy": "copyfiles -f ./dist/* ../WebContent/assets",
+    "xcopy": "xcopy dist ..\\adManageServer\\WebContent\\assets /s /Y",
+    "test": "roadhog test",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "engines": {
+    "install-node": "6.9.2"
+  },
+  "dependencies": {
+    "antd": "^2.13.0",
+    "babel-eslint": "^7.2.3",
+    "babel-runtime": "^6.26.0",
+    "china-division": "^1.1.2",
+    "echarts": "^3.7.1",
+    "es6-shim": "^0.35.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "history": "^3.3.0",
+    "jquery": "^3.2.1",
+    "mobx": "^3.2.2",
+    "mobx-react": "^4.2.2",
+    "query-string": "^5.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redbox-react": "^1.5.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-import": "^1.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "copyfiles": "^1.2.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "expect": "^1.20.2",
+    "husky": "^0.12.0",
+    "mockjs": "^1.0.1-beta3",
+    "redbox-react": "^1.3.2",
+    "roadhog": "^1.2.2"
+  }
+}

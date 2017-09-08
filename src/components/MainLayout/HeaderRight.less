@@ -1,0 +1,26 @@
+@import "../../utils/default";
+.normal{
+  height: 48px;
+}
+.logo{
+  display: none;
+  font-size: 20px;
+  padding-left: 20px;
+  line-height: 48px;
+}
+@media only screen and (min-width: @max-width){
+
+}
+@media only screen and (max-width: @max-width){
+
+}
+@media only screen and (max-width: @min-width){
+  .logo{display: block;border-bottom: 1px solid #ddd;}
+  .menu{position: fixed;bottom: 0;width: 100%;z-index: 998;border-top: 1px solid #ddd;}
+  .icon{display: none;}
+  .li2{width: 50%;text-align: center;transition: all 0s ease;}
+  .li3{width: 33%;text-align: center;transition: all 0s ease;}
+  .li4{width: 25%;text-align: center;transition: all 0s ease;}
+  .li5{width: 20%;text-align: center;transition: all 0s ease;}
+  //.normal{height: 92px;}
+}
