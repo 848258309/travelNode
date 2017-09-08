@@ -1,0 +1,37 @@
+
+.head{
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #aaa;
+  display: flex;
+  flex-direction: row;
+  .left{
+    width: 200px;
+    background: yellow;
+  }
+  .right{
+    flex-grow: 2;
+    background: red;
+    .input{
+      text-align: right;
+    }
+    .title{
+      display: flex;
+      flex-direction: row;
+      .item{
+        flex-grow: 1;
+        text-align: right;
+      }
+    }
+  }
+}
+.tipTitle{
+  display: flex;
+  flex-direction: column;
+  .link{
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+  }
+}

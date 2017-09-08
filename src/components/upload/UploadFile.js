@@ -47,7 +47,7 @@ class UploadFile extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addFile({a:1,b:2});
+    this.props.addFile({name: 1111, list: 'aaa,bbb,ccc'});
   }
 
   render() {
