@@ -4,7 +4,9 @@ import { observer, inject } from 'mobx-react';
 import AdminLayout from '../components/AdminLayout/MainLayout';
 import Upload from './Upload';
 import Login from './Login';
+
 import Home from './Home';
+import Village from './Village';
 import Test from './test';
 
 class App extends React.Component {
@@ -33,6 +35,8 @@ class App extends React.Component {
     const userRouter = (
       <Switch>
         <Route exact path='/home' component={Home} />
+        <Route exact path='/village' component={Village} />
+        <Route exact path='/village/:id' component={Village} />
         <Route exact path='/test' component={Test} />
         <Redirect to='/home' />
       </Switch>

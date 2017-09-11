@@ -9,7 +9,7 @@ import App from './routes/App';
 
 render(
   <Provider { ...stores }>
-    <BrowserRouter>
+    <BrowserRouter basename='/travelNode' >
       <App />
     </BrowserRouter>
   </Provider>,

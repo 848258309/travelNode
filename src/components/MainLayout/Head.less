@@ -1,20 +1,31 @@
-
+@import "../../utils/default.less";
 .head{
-  max-width: 1000px;
+  width: @mainWidth;
   margin: 0 auto;
   color: #fff;
-  background-color: #aaa;
+  // background-color: #aaa;
   display: flex;
   flex-direction: row;
+  justify-content:flex-start;
   .left{
-    width: 200px;
-    background: yellow;
+    width: 220px;
   }
   .right{
     flex-grow: 2;
-    background: red;
     .input{
       text-align: right;
+      margin: 30px 0 20px;
+      input{
+        border-radius: 15px;
+        background: none;
+        border-width: 2px;
+        :hover{
+          border-color: #fff;
+        }
+      }
+      span span{
+        color: #fff;
+      }
     }
     .title{
       display: flex;
@@ -23,15 +34,41 @@
         flex-grow: 1;
         text-align: right;
       }
+      .text{
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        text-decoration: none;
+      }
     }
   }
 }
 .tipTitle{
   display: flex;
-  flex-direction: column;
-  .link{
-    color: #fff;
-    padding: 5px 0;
-    text-align: center;
+  flex-direction: row;
+  .tipLink{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    .link{
+      color: #fff;
+      padding: 5px 0;
+      text-align: center;
+      border: 1px solid #fff;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+    }
+    .link:last-child{
+      border-bottom: 0;
+    }
+  }
+  .tipImg{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    img{
+      width: 100%;
+    }
   }
 }

@@ -1,0 +1,73 @@
+@import "../../utils/default.less";
+
+.normal{
+  color: #eee;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../../images/footerBac.png');
+  .foot1{
+    width: 150px;
+    img{
+      width: 100%;
+    }
+  }
+  .foot2{
+    width: @mainWidth;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    .block{
+      flex-grow: 2;
+      .title{
+        margin-bottom: 30px;
+        font-size: 22px;
+        text-align: center;
+      }
+      .ul{
+        width: 160px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .li,.li2{
+          width: 80px;
+          height: 30px;
+          line-height: 30px;
+          color: #eee;
+        }
+        .li2{
+          text-align: right;
+        }
+      }
+      .map{
+        width: 200px;
+        margin: 80px auto 0;
+        img{
+          width: 100%;
+        }
+      }
+      .phone{
+        font-size: 18px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+      &:last-child{
+        flex-grow: 0;
+        width: 140px;
+        .qrcode{
+          width: 140px;
+          height: 140px;
+          margin-bottom: 10px;
+          background: #fff;
+        }
+        .small{
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
