@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { message} from 'antd';
 import history from 'history';
 import styles from './Login.less';
-import LoginForm from '../components/Login/LoginForm';
+import LoginForm from '../../components/Login/LoginForm';
 //const [home1] = [require('../images/login.jpg')];
 
 class Login extends React.Component {

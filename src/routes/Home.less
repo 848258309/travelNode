@@ -1,15 +1,19 @@
 @import "../utils/default.less";
-@ItemHeight: 226.3px;
+@ItemHeight: 239.2px;
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .head{
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  composes: flexColumn;
   justify-content:space-between;
-  align-items: center;
   height: 890px;
-  background: url('../images/head.jpg') no-repeat;
-  // background-size: 100% 100%;
+  background: url('../images/head.jpg') no-repeat center center;
   .input{
     width: @mainWidth;
     height: 120px;
@@ -169,8 +173,8 @@
           border: 0;
           position: absolute;
           z-index: 5;
-          margin-top: -55px;
-          font-size: 20px;
+          margin-top: -62px;
+          font-size: 24px;
           padding: 10px 0;
           background: rgba(0, 0, 0, 0.6);
         }
@@ -205,7 +209,7 @@
           font-size: 18px;
           font-weight: 500;
           color: #000;
-          border: 1px solid #666;
+          border: 1px solid #999;
           border-top: 0;
         }
         .li{

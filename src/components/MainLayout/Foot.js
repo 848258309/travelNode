@@ -37,7 +37,7 @@ const Foot = function({
       <section className={styles.foot1}><img src={imgObj.footImg}/></section>
       <section className={styles.foot2}>
         <div className={styles.block}>
-          <p className={styles.title}>特色景点</p>
+          <p className={styles.title}>特色乡村</p>
           <div className={styles.ul}>
             {
               footer1.map((x,i)=><Link key={x.name} className={i%2==1?styles.li2:styles.li} to={`/village`}>{x.name}</Link>)
@@ -45,7 +45,7 @@ const Foot = function({
           </div>
         </div>
         <div className={styles.block}>
-          <p className={styles.title}>图游中国</p>
+          <p className={styles.title}>图游建德</p>
           <div className={styles.map}>
             <img src={imgObj.mapImg}/>
           </div>

@@ -2,8 +2,9 @@ import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import AdminLayout from '../components/AdminLayout/MainLayout';
-import Upload from './Upload';
-import Login from './Login';
+// 管理员
+import Upload from './admin/Upload';
+import Login from './admin/Login';
 
 import Home from './Home';
 import Village from './Village';

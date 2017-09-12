@@ -7,6 +7,11 @@ import Foot from '../components/MainLayout/Foot';
 const imgObj = {
   headImg: require('../images/head.jpg'),
   content1Img: require('../images/content1.jpg'),
+  content12Img: require('../images/22.png'),
+  content13Img: require('../images/33.png'),
+  content14Img: require('../images/44.png'),
+  content15Img: require('../images/55.png'),
+  content16Img: require('../images/66.png'),
   content2Img: require('../images/content2.jpg'),
   content3Img: require('../images/content3.png'),
   con1Img: require('../images/con1.png'),
@@ -48,12 +53,12 @@ class Home extends React.Component {
     const { history } = this.props;
 
     const content1 = [
-      {name: '岳家村'},
-      {name: '高丘村'},
-      {name: '浪彩村'},
-      {name: '上塘村'},
-      {name: '七岭脚村'},
-      {name: '高垣村'},
+      {name: '岳家村',img: imgObj.content1Img},
+      {name: '高丘村',img: imgObj.content12Img},
+      {name: '浪彩村',img: imgObj.content13Img},
+      {name: '上塘村',img: imgObj.content14Img},
+      {name: '七岭脚村',img: imgObj.content15Img},
+      {name: '高垣村',img: imgObj.content16Img},
     ];
 
     const content2 = [
@@ -106,7 +111,7 @@ class Home extends React.Component {
             <div className={styles.gallery}>
               {
                 content1.map(x=><div key={x.name} className={styles.item}>
-                  <img src={imgObj.content1Img} />
+                  <img src={x.img} />
                   <Link
                     id='cover'
                     className={styles.cover}

@@ -3,8 +3,8 @@ import { Icon, Modal, Input, message } from 'antd';
 // import { observable, computed, useStrict, action, autorun } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import styles from './common.css';
-import UploadFileItem from '../components/upload/UploadFile';
-import { addFile } from '../actions/index';
+import UploadFileItem from '../../components/upload/UploadFile';
+import { addFile } from '../../actions/index';
 
 @inject('upload','uiState') @observer
 class UploadFile extends React.Component {
