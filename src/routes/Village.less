@@ -1,5 +1,178 @@
-.normal{
-  img{
+@import "../utils/default.less";
+@ItemHeight: 239.2px;
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.clearBoth {
+  clear: both;
+}
+p {
+  text-indent: 2em;
+  // font-size: 18px;
+}
+
+.head{
+  width: 100%;
+  composes: flexColumn;
+  justify-content:space-between;
+  height: 500px;
+  background: url('../images/village/yuejiacun/subHead.jpg') no-repeat center center;
+  background-size: cover;
+  .input{
+    width: @mainWidth;
+    height: 120px;
+    margin-bottom: -50px;
+    background: #f30606;
+    display: flex;
+    text-align: center;
+    .left{
+      width: 200px;
+      line-height: 120px;
+      color: #fff;
+      font-size: 24px;
+      background: #5b5050;
+    }
+    .right{
+      flex-grow: 2;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      input{
+        width: 400px;
+        height: 50px;
+        background: #d90000;
+        border-radius: 10px;
+        border: none;
+        outline:medium;
+        font-size: 20px;
+        padding: 0px 20px;
+        color: #fff;
+      }
+      div{
+        width: 120px;
+        height: 50px;
+        line-height: 50px;
+        margin-left: -30px;
+        background: #fff;
+        color: #f30606;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        // font-family: "SimHei";
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.articleContent {
+  width: 50%;
+  margin: 0 auto;
+  .subNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px auto;
     width: 100%;
+    .subNavItem {
+      display: inline-block;
+      font-size: 18px;
+      margin: 5px 3px;
+      color: black;
+    }
+  }
+  .villiageContent {
+    // margin: 30px auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    .contentItem {
+      text-align: center;
+      margin: 40px 0;
+      .itemTitle {
+        position: relative;
+        display: inline;
+        font-size: 30px;
+        border-bottom: 1px solid black;
+      }
+      .itemTitle:before {
+        width: 0;
+        height:0;
+        border-left:10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid black;
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 45%;
+      }
+      .itemIntro {
+        position: relative;
+        margin-top: 40px;
+        width: 100%;
+        text-align: left;
+        .itemIntroImg {
+          width: 55%;
+          float: left;
+          margin-top: 70px;
+        }
+        .itemIntroText {
+            position: absolute;
+            z-index: -999;
+            top: 0;
+            right: 0;
+            width: 70%;
+            padding: 10px 10px 20px 30%;
+            background-color: lightgrey;
+            h2,h3 {
+              text-align: right;
+            }
+            p {
+              margin: 10px 0;
+              text-align: left;
+            }
+        }
+        .paragraph {
+          margin: 20px 0;
+          .itemSubTitle {
+            text-indent: 3em;
+            position: relative;
+          }
+          .itemSubTitle:before {
+            content: "";
+            height: 14px;
+            width: 14px;
+            border-radius: 10px;
+            background-color: black;
+            position: absolute;
+            left: 2em;
+            top: 7px;
+          }
+        }
+        .itemMap {
+          width: 100%;
+        }
+      }
+      .vrImgs {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .imgLink {
+          width: 47%;
+          height: 47%;
+          margin: 10px 0;
+          .vrImg {
+            width: 100%;
+          }
+        }
+
+      }
+    }
   }
 }
